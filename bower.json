@@ -1,0 +1,17 @@
+{
+  "name": "package",
+  "version": "0.0.0",
+  "dependencies": {
+	"foundation": "*",
+	"jquery": "*",
+	"threejs": "*",
+	"modernizr": "*"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
