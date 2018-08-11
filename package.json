@@ -2,7 +2,10 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "babel-core": "^6.26.3",
+    "gulp-babel": "^7.0.1",
     "gulp-htmlmin": "^4.0.0",
+    "gulp-order": "^1.1.1",
     "gulp-serve": "^1.4.0"
   },
   "devDependencies": {

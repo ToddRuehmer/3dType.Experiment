@@ -12,6 +12,8 @@ var $           = require( 'gulp-load-plugins' )(),
     serve        = require( 'gulp-serve' ),
     neat        = require( 'node-neat' ).includePaths,
     notify      = require( 'gulp-notify' ),
+    order     = require( 'gulp-order' ),
+    babel     = require( 'gulp-babel' ),
     plumber     = require( 'gulp-plumber' ),
     usemin      = require( 'gulp-usemin' ),
     htmlmin      = require( 'gulp-htmlmin' ),
@@ -144,7 +146,12 @@ gulp.task( 'concat-plugins', function() {
 
 
 gulp.task( 'concat-scripts', function() {
-  gulp.src([ 'src/js/main.js', 'src/js/**/*.js' ])
+  gulp.src([ 'src/js/**/*.js' ])
+    .pipe(order([
+      'src/js/**/*.js',
+      'src/js/main.js'
+    ]))
+    .pipe(babel())
     .pipe( concat( 'main.min.js' ))
     .pipe( gulp.dest( 'js/' ))
     .pipe( reload({ stream: true }))
